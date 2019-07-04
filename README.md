@@ -21,7 +21,8 @@ sudo python3 get-pip.py<br/>
 sudo -H  pip  install numpy<br/>
 sudo -H  pip3 install Cython<br/>
 <br/>
-**3. Extra nice to have**
+**3. Extra nice to have**<br/>
+<br/>
 sudo apt-get install codeblocks codeblocks-contrib<br/>
 sudo apt-get install spyder3<br/>
 <br/>
@@ -41,9 +42,10 @@ sudo nano /etc/fstab<br/>
  *add*<br/>
 /swapfile swap swap defaults 0 0<br/>
 <br/>
-**5. OpenCV, select your prefered version**
-cd ~
-wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.0.1.zip<br/>
+**5. OpenCV, select your prefered version**<br/>
+cd ~<br/>
+wget -O opencv_contrib.zip<br/>
+https://github.com/opencv/opencv_contrib/archive/4.0.1.zip<br/>
 wget -O opencv.zip https://github.com/opencv/opencv/archive/4.0.1.zip<br/>
 unzip opencv_contrib.zip<br/>
 unzip opencv.zip<br/>
@@ -53,15 +55,15 @@ cd opencv<br/>
 mkdir build<br/>
 cd build<br/>
 
-*Todo add more flags of your choice....*
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_ENABLE_NONFREE=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D BUILD_EXAMPLES=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -DWITH_INF_ENGINE=ON -DENABLE_CXX11=ON  ..
+*Todo add more flags of your choice....*<br/>
+cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_ENABLE_NONFREE=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D BUILD_EXAMPLES=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -DWITH_INF_ENGINE=ON -DENABLE_CXX11=ON  ..<br/>
 make -j4<br/>
 sudo make install<br/>
  *Note the installation directory of opencv*<br/>
-
+<br/>
 **6. Coral**<br/>
  https://coral.withgoogle.com/docs/accelerator/get-started/<br/>
-
+<br/>
 mkdir coral<br/>
 cd coral<br/>
 wget https://dl.google.com/coral/edgetpu_api/edgetpu_api_latest.tar.gz -O<br/>
@@ -72,7 +74,7 @@ bash ./install.sh<br/>
 
 *Minor simple stupid fix for Coral*<br/>
 cd /usr/local/lib/python3.6/dist-packages/edgetpu/swig/<br/>
-sudo cp _edgetpu_cpp_wrapper.cpython-35m-aarch64-linux-gnu.so <br/>_edgetpu_cpp_wrapper.so<br/>
+sudo cp _edgetpu_cpp_wrapper.cpython-35m-aarch64-linux-gnu.so <br/><br/>_edgetpu_cpp_wrapper.so<br/>
 
 **7. NCS 2**
 https://software.intel.com/en-us/articles/ARM64-sbc-and-NCS2<br/>
@@ -87,19 +89,19 @@ git submodule init<br/>
 git submodule update --recursive<br/>
 
 **7.1 Prepare dldt for aarch64 or architecture of your choice**<br/>
-( Check your Machine Hardware Architecture with : uname --m  in my case aarch64 )<br/>
-
-**7.2 Copy more samples from**
+ *Check your Machine Hardware Architecture with : uname --m  in my case aarch64*  <br/>
+<br/>
+**7.2 Copy more samples from**<br/>
 l_openvino_toolkit_raspbi_p_2019.1.094.tgz<br/>
-
+<br/>
 to<br/>
 ~/ncs2/dldt/inference-engine/samples/<br/>
-
+<br/>
 *Ex, with codeblocks Ctrl+Shift+F  ( find in files )*<br/>
 find  "!defined(_M_ARM)" then add  !defined(__aarch64__)<br/>
-
+<br/>
 example : #if !defined(__arm__) && !defined(_M_ARM) && !defined(__aarch64__)<br/>
-
+<br/>
 **7.3 probably not needed** ( but why not ;-)<br/>
 find "armv7l" and add elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")<br/>
 <br/>
@@ -116,7 +118,7 @@ set(CMAKE_SYSTEM_NAME Linux)<br/>
 set(CMAKE_SYSTEM_PROCESSOR aarch64)<br/>
 set(CMAKE_C_COMPILER gcc-7)<br/>
 set(CMAKE_CXX_COMPILER g++-7)<br/>
-
+<br/>
 
 **7.5 Build inference-engine for C++ & python**<br/>
 <br/>
@@ -125,14 +127,14 @@ export OpenCV_DIR=/usr/include/opencv2<br/>
 <br/>
 
  *Todo add more flags of your choice...*<br/>
-*verify -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so  and<br/>DPYTHON_INCLUDE_DIR=/usr/include/python3.6  ( replace with your config )*<br/>
+verify -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so  <br/>and<br/>DPYTHON_INCLUDE_DIR=/usr/include/python3.6  ( replace with your config ) <br/>
 <br/>
 mkdir build<br/>
 cd build<br/>
 cmake -DENABLE_PYTHON=ON -DPYTHON_EXECUTABLE=`which python3.6` -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.6 -DCMAKE_BUILD_TYPE=Release -DENABLE_MKL_DNN=OFF -DENABLE_CLDNN=OFF -DENABLE_GNA=OFF -DENABLE_SSE42=OFF -DTHREADING=SEQ ..<br/>
 make -j4<br/>
 <br/>
-**7.5 create tools folder**
+**7.5 create tools folder**<br/>
 /home/gnu/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/inference_engine/tools<br/>
 <br/>
 copy from your x86 openvino tools folder to tools  <br/>
@@ -143,12 +145,13 @@ tools/utils<br/>
 tools/network.py<br/>
 <br/>
 **7.6 Simple stupid python "installation"**<br/>
+<br/>
 cd /usr/local/lib/python3.6/dist-packages<br/>
 sudo mkdir  openvino<br/>
 cd openvino<br/>
 sudo cp -r /home/gnu/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/* .<br/>
-
- **8 Needed ?** ( seems to work without it )<br/>
+<br/>
+ **8 Needed myriad-rules ?** ( seems to work without it )<br/>
 *from l_openvino_toolkit_raspbi_p_2019.1.094.tgz*<br/>
 
 cp 97-myriad-usbboot.rules_.txt /etc/udev/rules.d/97-myriad-usbboot.rules<br/>
