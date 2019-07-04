@@ -82,7 +82,7 @@ bash ./install.sh<br/>
 cd /usr/local/lib/python3.6/dist-packages/edgetpu/swig/<br/>
 sudo cp _edgetpu_cpp_wrapper.cpython-35m-aarch64-linux-gnu.so edgetpu_cpp_wrapper.so<br/>
 <br/>
-**7. NCS 2**
+**7. NCS 2**<br/>
 https://software.intel.com/en-us/articles/ARM64-sbc-and-NCS2<br/>
 https://github.com/skhameneh/OpenVINO-ARM64<br/>
 
