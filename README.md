@@ -1,6 +1,12 @@
 NCS2-and-Coral-TPU-on-aarch64
 How to install NCS2 Movidius XX and Google Coral TPU on aarch64
-
+ **1. apt-get**
+sudo apt-get update && sudo apt-get upgrade<br />
+sudo apt-get install build-essential cmake unzip pkg-config<br/>
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev<br/>
+sudo apt-get install libxvidcore-dev libx264-dev  <br/>
+sudo apt-get install libgtk-3-dev libopenblas-dev libpng-dev<br/>
+sudo apt-get install libatlas-base-dev gfortran libdc1394-22-dev<br/>
  **1. apt-get**
 sudo apt-get update && sudo apt-get upgrade
 sudo apt-get install build-essential cmake unzip pkg-config
@@ -24,7 +30,13 @@ sudo -H  pip3 install Cython
 
 **3. Extra nice to have**
 sudo apt-get install codeblocks codeblocks-contrib
-sudo apt-get install spyder3
+sudo apt-get install spyder3 **1. apt-get**
+sudo apt-get update && sudo apt-get upgrade<br />
+sudo apt-get install build-essential cmake unzip pkg-config<br/>
+sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev<br/>
+sudo apt-get install libxvidcore-dev libx264-dev  <br/>
+sudo apt-get install libgtk-3-dev libopenblas-dev libpng-dev<br/>
+sudo apt-get install libatlas-base-dev gfortran libdc1394-22-dev<br/>
 
 **4. Swapfile Armbian** ( if you want to compile faster, with make -j4)
  https://linuxize.com/post/how-to-add-swap-space-on-debian-9/
