@@ -1,3 +1,7 @@
+This is tested with :
+
+ - Nvidia Jetson nano
+ - NanoPi M4
 
  **1. apt-get**<br/>
  <br/>
@@ -74,8 +78,8 @@ bash ./install.sh<br/>
 
 *Minor simple stupid fix for Coral*<br/>
 cd /usr/local/lib/python3.6/dist-packages/edgetpu/swig/<br/>
-sudo cp _edgetpu_cpp_wrapper.cpython-35m-aarch64-linux-gnu.so <br/><br/>_edgetpu_cpp_wrapper.so<br/>
-
+sudo cp _edgetpu_cpp_wrapper.cpython-35m-aarch64-linux-gnu.so edgetpu_cpp_wrapper.so<br/>
+<br/>
 **7. NCS 2**
 https://software.intel.com/en-us/articles/ARM64-sbc-and-NCS2<br/>
 https://github.com/skhameneh/OpenVINO-ARM64<br/>
@@ -123,7 +127,10 @@ set(CMAKE_CXX_COMPILER g++-7)<br/>
 **7.5 Build inference-engine for C++ & python**<br/>
 <br/>
 *from step 5, depends on your version of OpenCV*<br/>
-export OpenCV_DIR=/usr/include/opencv2<br/>
+export OpenCV_DIR=/usr/include/opencv2  ( Nvidia Jetson nano ) <br/>
+or<br/>
+export OpenCV_DIR=/usr/local/include/opencv4 ( Install from source )<br/>
+ <br/>
 <br/>
 
  *Todo add more flags of your choice...*<br/>
@@ -137,14 +144,14 @@ make -j4<br/>
 **7.5 create tools folder**<br/>
 /home/gnu/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/inference_engine/tools<br/>
 <br/>
-copy from your x86 openvino tools folder to tools  <br/>
+*copy from your x86 openvino tools folder to tools*  <br/>
 tools/accuracy_checker<br/>
 tools/benchmark<br/>
 tools/calibration<br/>
 tools/utils<br/>
 tools/network.py<br/>
 <br/>
-**7.6 Simple stupid python "installation"**<br/>
+**7.6 Simple stupid python installation**<br/>
 <br/>
 cd /usr/local/lib/python3.6/dist-packages<br/>
 sudo mkdir  openvino<br/>
@@ -162,5 +169,5 @@ ldconfig<br/>
 
 **Ready !**<br/>
 <br/>
-Test a sample  ( use sudo python3 if it doesn't start )<br/>
+Test a sample  ( if it doesn't start ..try use sudo python3  )<br/>
 
