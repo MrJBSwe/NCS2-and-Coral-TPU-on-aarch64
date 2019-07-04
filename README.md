@@ -160,7 +160,7 @@ tools/network.py<br/>
 cd /usr/local/lib/python3.6/dist-packages<br/>
 sudo mkdir  openvino<br/>
 cd openvino<br/>
-sudo cp -r /home/gnu/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/* .<br/>
+sudo cp -r ~/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/* .<br/>
 <br/>
  **8 Needed myriad-rules ?** ( seems to work without it )<br/>
 *from l_openvino_toolkit_raspbi_p_2019.1.094.tgz*<br/>
