@@ -1,3 +1,5 @@
+**How to install NCS2 and Google Coral TPU on aarch64**<br/>
+
 This is tested with :
 
  - Nvidia Jetson nano
@@ -134,7 +136,9 @@ export OpenCV_DIR=/usr/local/include/opencv4 ( Install from source )<br/>
 <br/>
 
  *Todo add more flags of your choice...*<br/>
-verify -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so  <br/>and<br/>DPYTHON_INCLUDE_DIR=/usr/include/python3.6  ( replace with your config ) <br/>
+*verify -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so*<br/>
+ *verify DPYTHON_INCLUDE_DIR=/usr/include/python3.6*<br/>   
+<br/>
 <br/>
 mkdir build<br/>
 cd build<br/>
