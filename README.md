@@ -97,7 +97,7 @@ git submodule update --recursive<br/>
 **7.1 Prepare dldt for aarch64 or architecture of your choice**<br/>
  *Check your Machine Hardware Architecture with : uname --m  in my case aarch64*  <br/>
 <br/>
-**7.2 Copy more samples from**<br/>
+**7.1.1 Copy more samples from**<br/>
 l_openvino_toolkit_raspbi_p_2019.1.094.tgz<br/>
 <br/>
 to<br/>
@@ -108,7 +108,7 @@ find  "!defined(_M_ARM)" then add  !defined(__aarch64__)<br/>
 <br/>
 example : #if !defined(__arm__) && !defined(_M_ARM) && !defined(__aarch64__)<br/>
 <br/>
-**7.3 probably not needed** ( but why not ;-)<br/>
+**7.1.2 probably not needed** ( but why not ;-)<br/>
 find "armv7l" and add elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")<br/>
 <br/>
 *example*<br/>
@@ -117,7 +117,7 @@ if(CMAKE_SYSTEM_PROCESSOR STREQUAL "armv7l")<br/>
 elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")<br/>
     set (ARCH_FOLDER aarch64)<br/>
 
-**7.4 probably not needed** ( but why not ;-)<br/>
+**7.1.3 probably not needed** ( but why not ;-)<br/>
 <br/>
 Find and update "CMAKE_C_COMPILER"<br/>
 set(CMAKE_SYSTEM_NAME Linux)<br/>
@@ -126,7 +126,7 @@ set(CMAKE_C_COMPILER gcc-7)<br/>
 set(CMAKE_CXX_COMPILER g++-7)<br/>
 <br/>
 
-**7.5 Build inference-engine for C++ & python**<br/>
+**7.2 Build inference-engine for C++ & python**<br/>
 <br/>
 *from step 5, depends on your version of OpenCV*<br/>
 export OpenCV_DIR=/usr/include/opencv2  ( Nvidia Jetson nano ) <br/>
@@ -145,7 +145,7 @@ cd build<br/>
 cmake -DENABLE_PYTHON=ON -DPYTHON_EXECUTABLE=`which python3.6` -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.6 -DCMAKE_BUILD_TYPE=Release -DENABLE_MKL_DNN=OFF -DENABLE_CLDNN=OFF -DENABLE_GNA=OFF -DENABLE_SSE42=OFF -DTHREADING=SEQ ..<br/>
 make -j4<br/>
 <br/>
-**7.5 create tools folder**<br/>
+**7.3 create tools folder**<br/>
 /home/gnu/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/inference_engine/tools<br/>
 <br/>
 *copy from your x86 openvino tools folder to tools*  <br/>
@@ -155,7 +155,7 @@ tools/calibration<br/>
 tools/utils<br/>
 tools/network.py<br/>
 <br/>
-**7.6 Simple stupid python installation**<br/>
+**7.4 Simple stupid python installation**<br/>
 <br/>
 cd /usr/local/lib/python3.6/dist-packages<br/>
 sudo mkdir  openvino<br/>
