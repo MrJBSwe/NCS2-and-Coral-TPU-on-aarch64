@@ -146,7 +146,7 @@ cmake -DENABLE_PYTHON=ON -DPYTHON_EXECUTABLE=`which python3.6` -DPYTHON_LIBRARY=
 make -j4<br/>
 <br/>
 **7.3 create tools folder**<br/>
-/home/gnu/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/inference_engine/tools<br/>
+~/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/inference_engine/tools<br/>
 <br/>
 *copy from your x86 openvino tools folder to tools*  <br/>
 tools/accuracy_checker<br/>
