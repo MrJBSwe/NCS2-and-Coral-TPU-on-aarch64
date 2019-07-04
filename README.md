@@ -95,7 +95,7 @@ git submodule init<br/>
 git submodule update --recursive<br/>
 
 **7.1 Prepare dldt for aarch64 or architecture of your choice**<br/>
- *Check your Machine Hardware Architecture with : uname --m  in my case aarch64*  <br/>
+ *Check your Machine Hardware Architecture with : **uname --m**  in my case aarch64*  <br/>
 <br/>
 **7.1.1 Copy more samples from**<br/>
 l_openvino_toolkit_raspbi_p_2019.1.094.tgz<br/>
