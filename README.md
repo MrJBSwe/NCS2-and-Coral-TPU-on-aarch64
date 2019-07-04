@@ -1,4 +1,4 @@
-**How to install NCS2 Myriad X and Google Cora TPU on aarch64t**
+**How to install NCS2 Myriad X and Google Cora TPU on aarch64**
 
 This is tested with :
 
