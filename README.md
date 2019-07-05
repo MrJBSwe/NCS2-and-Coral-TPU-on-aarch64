@@ -124,7 +124,7 @@ to<br/>
 
 **7.1.2 Fix defines in samples**<br/>
 *Ex, with codeblocks Ctrl+Shift+F  ( find in files )*<br/>
-find  "!defined(_M_ARM)" then add  !defined(__aarch64__)<br/>
+find  "!defined(_M_ARM)" then add **&& !defined(__aarch64__)**<br/>
 <br/>
 example : #if !defined(__arm__) && !defined(_M_ARM) && !defined(__aarch64__)<br/>
 <br/>
