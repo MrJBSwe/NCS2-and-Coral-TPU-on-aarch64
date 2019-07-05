@@ -88,6 +88,7 @@ bash ./install.sh<br/>
 cd /usr/local/lib/python3.6/dist-packages/edgetpu/swig/<br/>
 sudo cp _edgetpu_cpp_wrapper.cpython-35m-aarch64-linux-gnu.so edgetpu_cpp_wrapper.so<br/>
 <br/>
+
 **7. NCS 2**<br/>
 https://software.intel.com/en-us/articles/ARM64-sbc-and-NCS2<br/>
 https://github.com/skhameneh/OpenVINO-ARM64<br/>
@@ -111,8 +112,8 @@ git submodule update --recursive<br/>
  - Select proper python include & library
  - patch output folder with tool from x86 installation
  - install python files
- 
 <br/>
+
 **7.1.1 Copy more samples from**<br/>
 Add more samples than comes with dldt<br/>
 <br/>
