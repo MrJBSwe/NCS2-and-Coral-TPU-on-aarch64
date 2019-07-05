@@ -7,7 +7,7 @@ This is tested with :
  
  Coral just needs a minor fix, step 6<br />
  OpenCV step 5, is optional if you already have it installed as for Nvidia Jetson Nano.<br />
- Step 7-8 is aimed at NCS2, and builds all C++ dldt inference-engine libraries <br />
+ Step 7-8 is aimed at NCS2, and builds all C++ dldt inference-engine libraries and ie_api.so for python<br />
 
  **1. apt-get**<br/>
  <br/>
@@ -102,6 +102,12 @@ git submodule update --recursive<br/>
 
 **7.1 Prepare dldt for aarch64 or architecture of your choice**<br/>
  *Check your Machine Hardware Architecture with : **uname --m**  in my case aarch64*  <br/>
+ - Add more samples than comes with dldt
+ - Fix #define in samples !defined(__aarch64__)
+ - Add aarch64 build folder ( optional )
+ - Select compiler ( optional )
+ - Select proper ptyhon include & library
+ 
 <br/>
 **7.1.1 Copy more samples from**<br/>
 l_openvino_toolkit_raspbi_p_2019.1.094.tgz<br/>
