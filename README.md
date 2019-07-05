@@ -121,13 +121,15 @@ l_openvino_toolkit_raspbi_p_2019.1.094.tgz<br/>
 to<br/>
 ~/ncs2/dldt/inference-engine/samples/<br/>
 <br/>
+
+**7.1.2 Fix #define**<br/>
 *Ex, with codeblocks Ctrl+Shift+F  ( find in files )*<br/>
 find  "!defined(_M_ARM)" then add  !defined(__aarch64__)<br/>
 <br/>
 example : #if !defined(__arm__) && !defined(_M_ARM) && !defined(__aarch64__)<br/>
 <br/>
 
-**7.1.2 Add aarch64 build folder** ( optional )<br/>
+**7.1.3 Add aarch64 build folder** ( optional )<br/>
 <br/>
 find "armv7l" and add elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")<br/>
 <br/>
@@ -138,7 +140,7 @@ elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")<br/>
     set (ARCH_FOLDER aarch64)<br/>
 <br/>
 
-**7.1.3 Select compiler** ( optional )<br/>
+**7.1.4 Select compiler** ( optional )<br/>
 <br/>
 Find and update "CMAKE_C_COMPILER"<br/>
 set(CMAKE_SYSTEM_NAME Linux)<br/>
