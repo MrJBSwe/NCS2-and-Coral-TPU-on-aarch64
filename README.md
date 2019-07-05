@@ -136,6 +136,7 @@ if(CMAKE_SYSTEM_PROCESSOR STREQUAL "armv7l")<br/>
 elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")<br/>
     set (ARCH_FOLDER aarch64)<br/>
 <br/>
+
 **7.1.3 probably not needed** ( but why not ;-)<br/>
 Select compiler<br/>
 <br/>
@@ -145,7 +146,7 @@ set(CMAKE_SYSTEM_PROCESSOR aarch64)<br/>
 set(CMAKE_C_COMPILER gcc-7)<br/>
 set(CMAKE_CXX_COMPILER g++-7)<br/>
 <br/>
-<br/>
+
 **7.2 Build inference-engine for C++ & python**<br/>
 <br/>
 *from step 5, depends on your version of OpenCV*<br/>
@@ -197,4 +198,5 @@ ldconfig<br/>
 **Ready !**<br/>
 <br/>
 Test a sample  ( if it doesn't start ..try use sudo python3  )<br/>
+
 
