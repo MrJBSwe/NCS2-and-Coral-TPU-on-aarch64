@@ -106,7 +106,9 @@ git submodule update --recursive<br/>
  - Fix #define in samples !defined(__aarch64__)
  - Add aarch64 build folder ( optional )
  - Select compiler ( optional )
- - Select proper ptyhon include & library
+ - Select proper python include & library
+ - patch output folder with tool from x86 installation
+ - install python files
  
 <br/>
 **7.1.1 Copy more samples from**<br/>
@@ -137,7 +139,7 @@ set(CMAKE_SYSTEM_PROCESSOR aarch64)<br/>
 set(CMAKE_C_COMPILER gcc-7)<br/>
 set(CMAKE_CXX_COMPILER g++-7)<br/>
 <br/>
-
+<br/>
 **7.2 Build inference-engine for C++ & python**<br/>
 <br/>
 *from step 5, depends on your version of OpenCV*<br/>
