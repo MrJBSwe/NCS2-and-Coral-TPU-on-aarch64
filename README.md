@@ -104,7 +104,7 @@ git submodule update --recursive<br/>
 
 **7.1 Prepare dldt for aarch64 or architecture of your choice**<br/>
 <br/>
- *Check your Machine Hardware Architecture with : **uname --m**  in my case aarch64*  <br/>
+ *Check your machine hardware architecture with : **uname --m**  in my case aarch64*  <br/>
  - Add more samples than comes with dldt
  - Fix #define in samples !defined(__aarch64__)
  - Add aarch64 build folder ( optional )
