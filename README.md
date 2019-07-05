@@ -112,6 +112,8 @@ git submodule update --recursive<br/>
  
 <br/>
 **7.1.1 Copy more samples from**<br/>
+Add more samples than comes with dldt<br/>
+<br/>
 l_openvino_toolkit_raspbi_p_2019.1.094.tgz<br/>
 <br/>
 to<br/>
@@ -123,6 +125,8 @@ find  "!defined(_M_ARM)" then add  !defined(__aarch64__)<br/>
 example : #if !defined(__arm__) && !defined(_M_ARM) && !defined(__aarch64__)<br/>
 <br/>
 **7.1.2 probably not needed** ( but why not ;-)<br/>
+Add aarch64 build folder<br/>
+<br/>
 find "armv7l" and add elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")<br/>
 <br/>
 *example*<br/>
@@ -130,8 +134,9 @@ if(CMAKE_SYSTEM_PROCESSOR STREQUAL "armv7l")<br/>
     set (ARCH_FOLDER armv7l)<br/>
 elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")<br/>
     set (ARCH_FOLDER aarch64)<br/>
-
+<br/>
 **7.1.3 probably not needed** ( but why not ;-)<br/>
+Select compiler<br/>
 <br/>
 Find and update "CMAKE_C_COMPILER"<br/>
 set(CMAKE_SYSTEM_NAME Linux)<br/>
@@ -160,6 +165,8 @@ cmake -DENABLE_PYTHON=ON -DPYTHON_EXECUTABLE=`which python3.6` -DPYTHON_LIBRARY=
 make -j4<br/>
 <br/>
 **7.3 create tools folder**<br/>
+patch output folder with tool from x86 installation<br/>
+<br/>
 ~/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/inference_engine/**tools**<br/>
 <br/>
 *copy from your x86 openvino tools folder to tools*  <br/>
@@ -170,6 +177,7 @@ tools/utils<br/>
 tools/network.py<br/>
 <br/>
 **7.4 Simple stupid python installation**<br/>
+install python files<br/>
 <br/>
 cd /usr/local/lib/python3.6/dist-packages<br/>
 sudo mkdir  openvino<br/>
