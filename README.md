@@ -128,8 +128,7 @@ find  "!defined(_M_ARM)" then add  !defined(__aarch64__)<br/>
 example : #if !defined(__arm__) && !defined(_M_ARM) && !defined(__aarch64__)<br/>
 <br/>
 
-**7.1.2 probably not needed** ( but why not ;-)<br/>
-Add aarch64 build folder<br/>
+**7.1.2 Add aarch64 build folder** ( optional )<br/>
 <br/>
 find "armv7l" and add elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")<br/>
 <br/>
@@ -140,8 +139,7 @@ elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")<br/>
     set (ARCH_FOLDER aarch64)<br/>
 <br/>
 
-**7.1.3 probably not needed** ( but why not ;-)<br/>
-Select compiler<br/>
+**7.1.3 Select compiler** ( optional )<br/>
 <br/>
 Find and update "CMAKE_C_COMPILER"<br/>
 set(CMAKE_SYSTEM_NAME Linux)<br/>
@@ -182,13 +180,13 @@ tools/utils<br/>
 tools/network.py<br/>
 <br/>
 **7.4 Simple stupid python installation**<br/>
-install python files<br/>
 <br/>
 cd /usr/local/lib/python3.6/dist-packages<br/>
 sudo mkdir  openvino<br/>
 cd openvino<br/>
 sudo cp -r ~/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/* .<br/>
 <br/>
+
  **8 Needed myriad-rules ?** ( seems to work without it )<br/>
 *from l_openvino_toolkit_raspbi_p_2019.1.094.tgz*<br/>
 
