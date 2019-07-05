@@ -114,8 +114,7 @@ git submodule update --recursive<br/>
  - install python files
 <br/>
 
-**7.1.1 Copy more samples from**<br/>
-Add more samples than comes with dldt<br/>
+**7.1.1 Add more samples than comes with dldy**<br/>
 <br/>
 l_openvino_toolkit_raspbi_p_2019.1.094.tgz<br/>
 <br/>
