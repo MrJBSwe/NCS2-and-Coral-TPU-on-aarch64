@@ -125,6 +125,7 @@ find  "!defined(_M_ARM)" then add  !defined(__aarch64__)<br/>
 <br/>
 example : #if !defined(__arm__) && !defined(_M_ARM) && !defined(__aarch64__)<br/>
 <br/>
+
 **7.1.2 probably not needed** ( but why not ;-)<br/>
 Add aarch64 build folder<br/>
 <br/>
