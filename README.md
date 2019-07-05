@@ -122,7 +122,7 @@ to<br/>
 ~/ncs2/dldt/inference-engine/samples/<br/>
 <br/>
 
-**7.1.2 Fix #define**<br/>
+**7.1.2 Fix defines in samples**<br/>
 *Ex, with codeblocks Ctrl+Shift+F  ( find in files )*<br/>
 find  "!defined(_M_ARM)" then add  !defined(__aarch64__)<br/>
 <br/>
