@@ -99,7 +99,7 @@ git clone https://github.com/opencv/dldt.git<br/>
 cd dldt/inference-engine/<br/>
 git submodule init<br/>
 git submodule update --recursive<br/>
-<br/>**
+<br/>
 **7.1 Prepare dldt for aarch64 or architecture of your choice**<br/>
 <br/>
  *Check your Machine Hardware Architecture with : **uname --m**  in my case aarch64*  <br/>
