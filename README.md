@@ -6,7 +6,7 @@ This is tested with :
  - NanoPi M4 & NanoPi Neo4 ( Armbian 18.04 )
  
  Coral just needs a minor fix, step 6<br />
- OpenCV step 5, is optional if you already have it installed as for Nvidia Jetson Nano.<br />
+ OpenCV step 5, is optional if you already have it installed (Nvidia Jetson Nano)<br />
  Step 7-8 is aimed at NCS2, and builds all C++ dldt inference-engine libraries and ie_api.so for python<br />
 
  **1. apt-get**<br/>
