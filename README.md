@@ -76,6 +76,7 @@ sudo make install<br/>
 **6. Coral**<br/>
  https://coral.withgoogle.com/docs/accelerator/get-started/<br/>
 <br/>
+cd ~<br/>
 mkdir coral<br/>
 cd coral<br/>
 wget https://dl.google.com/coral/edgetpu_api/edgetpu_api_latest.tar.gz -O<br/>
@@ -154,7 +155,7 @@ set(CMAKE_CXX_COMPILER g++-7)<br/>
 *from step 5, depends on your version of OpenCV*<br/>
 export OpenCV_DIR=/usr/include/opencv2  ( Nvidia Jetson nano ) <br/>
 or<br/>
-export OpenCV_DIR=/usr/local/include/opencv4 ( Install from source )<br/>
+export OpenCV_DIR=/usr/local/include/<\'>opencv4 ( Install from source )<br/>
  <br/>
 <br/>
 *verify -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so*<br/>
