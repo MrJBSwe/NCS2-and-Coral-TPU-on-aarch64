@@ -155,7 +155,7 @@ set(CMAKE_CXX_COMPILER g++-7)<br/>
 *from step 5, depends on your version of OpenCV*<br/>
 export OpenCV_DIR=/usr/include/opencv2  ( Nvidia Jetson nano ) <br/>
 or<br/>
-export OpenCV_DIR=/usr/local/include/<\'>opencv4 ( Install from source )<br/>
+export OpenCV_DIR=/usr/local/include/opencv4 ( Install from source )<br/>
  <br/>
 <br/>
 *verify -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so*<br/>
@@ -166,7 +166,7 @@ cd ~/ncs2/dldt/inference-engine<br/>
 mkdir build<br/>
 cd build<br/>
 *Todo add more flags of your choice...*<br/>
-cmake -DENABLE_PYTHON=ON -DPYTHON_EXECUTABLE=`which python3.6` -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.6 -DCMAKE_BUILD_TYPE=Release -DENABLE_MKL_DNN=OFF -DENABLE_CLDNN=OFF -DENABLE_GNA=OFF -DENABLE_SSE42=OFF -DTHREADING=SEQ ..<br/>
+cmake -DENABLE_PYTHON=ON -DPYTHON_EXECUTABLE=\`which python3.6\` -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.6 -DCMAKE_BUILD_TYPE=Release -DENABLE_MKL_DNN=OFF -DENABLE_CLDNN=OFF -DENABLE_GNA=OFF -DENABLE_SSE42=OFF -DTHREADING=SEQ ..<br/>
 make -j4<br/>
 <br/>
 **7.3 create tools folder**<br/>
