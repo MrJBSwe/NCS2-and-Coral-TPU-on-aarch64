@@ -117,6 +117,7 @@ git submodule update --recursive<br/>
 
 **7.1.1 Add more samples than comes with dldt**<br/>
 <br/>
+from<br/>
 l_openvino_toolkit_raspbi_p_2019.1.094.tgz<br/>
 <br/>
 to<br/>
