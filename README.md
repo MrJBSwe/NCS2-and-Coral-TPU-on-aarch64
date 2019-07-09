@@ -45,6 +45,7 @@ $sudo apt-get install spyder3
 ```
 <br/>
 **4. Swapfile Armbian**( if you want to compile faster, with make -j4)<br/>
+<br/>
  https://linuxize.com/post/how-to-add-swap-space-on-debian-9/<br/>
  <br/>
  
@@ -58,13 +59,13 @@ $sudo swapon /swapfile
 ```
 <br/>
  *If you whant to make it permanent ..*<br/>
-  ```bash
+```bash
 $sudo nano /etc/fstab<br/>
 ```
 <br/>
- *add*<br/>
+*add*<br/>
 ```bash
-/swapfile swap swap defaults 0 0<br/>
+/swapfile swap swap defaults 0 0
 ```bash
 <br/>
 
