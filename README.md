@@ -91,6 +91,7 @@ $bash ./install.sh
 ```
 <br/>
 *Minor simple stupid fix for Coral*<br/>
+
 ```bash
 $cd /usr/local/lib/python3.6/dist-packages/edgetpu/swig/
 $sudo cp _edgetpu_cpp_wrapper.cpython-35m-aarch64-linux-gnu.so edgetpu_cpp_wrapper.so
