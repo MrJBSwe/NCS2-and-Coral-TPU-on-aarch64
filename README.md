@@ -47,6 +47,7 @@ $sudo apt-get install spyder3
 **4. Swapfile Armbian** ( if you want to compile faster, with make -j4)<br/>
  https://linuxize.com/post/how-to-add-swap-space-on-debian-9/<br/>
  <br/>
+ 
  ```bash
 $sudo swapon --show
 $sudo fallocate -l 2G /swapfile
@@ -59,9 +60,13 @@ $sudo swapon /swapfile
   ```bash
 $sudo nano /etc/fstab<br/>
 ```
- *add*<br/>
-/swapfile swap swap defaults 0 0<br/>
 <br/>
+ *add*<br/>
+ ```bash
+/swapfile swap swap defaults 0 0<br/>
+  ```bash
+<br/>
+
 **5. OpenCV, select your prefered version**<br/>
 This step is optional ( intended primary for a clean Armbian )<br/>
 
