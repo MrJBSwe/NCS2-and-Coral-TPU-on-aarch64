@@ -12,45 +12,53 @@ This is tested with :
  **1. apt-get**<br/>
  <br/>
  ```bash
-$sudo apt-get update && sudo apt-get upgrade<br />
-$sudo apt-get install build-essential cmake unzip pkg-config<br/>
-$sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev<br/>
-$sudo apt-get install libxvidcore-dev libx264-dev  <br/>
-$sudo apt-get install libgtk-3-dev libopenblas-dev libpng-dev<br/>
-$sudo apt-get install libatlas-base-dev gfortran libdc1394-22-dev<br/>
-$sudo apt-get install python3-dev python3-numpy python3-pip<br/>
-$sudo apt-get install curl wget libssl-dev ca-certificates git libboost-regex-dev<br/>
-$sudo apt-get install libgtk2.0-dev pkg-config unzip automake libtool autoconf<br/>
-$sudo apt-get install libcairo2-dev libpango1.0-dev libglib2.0-dev libgtk2.0-dev<br/>
-$sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base libusb-1.0-0-dev<br/>
-$sudo apt-get install ffmpeg libjpeg-dev libtiff-dev  git  libtbb2 libtbb-dev<br/>
-$sudo apt-get install cython cython3 libv4l-dev<br/>
+$sudo apt-get update && sudo apt-get upgrade
+$sudo apt-get install build-essential cmake unzip pkg-config
+$sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev
+$sudo apt-get install libxvidcore-dev libx264-dev  
+$sudo apt-get install libgtk-3-dev libopenblas-dev libpng-dev
+$sudo apt-get install libatlas-base-dev gfortran libdc1394-22-dev
+$sudo apt-get install python3-dev python3-numpy python3-pip
+$sudo apt-get install curl wget libssl-dev ca-certificates git libboost-regex-dev
+$sudo apt-get install libgtk2.0-dev pkg-config unzip automake libtool autoconf
+$sudo apt-get install libcairo2-dev libpango1.0-dev libglib2.0-dev libgtk2.0-dev
+$sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base libusb-1.0-0-dev
+$sudo apt-get install ffmpeg libjpeg-dev libtiff-dev  git  libtbb2 libtbb-dev
+$sudo apt-get install cython cython3 libv4l-dev
 ```
 <br/>
+
 **2. pip/python**<br/>
-wget https://bootstrap.pypa.io/get-pip.py<br/>
-sudo python3 get-pip.py<br/>
-sudo -H  pip  install numpy<br/>
-sudo -H  pip3 install Cython<br/>
+ ```bash
+$wget https://bootstrap.pypa.io/get-pip.py
+$sudo python3 get-pip.py
+$sudo -H  pip  install numpy
+$sudo -H  pip3 install Cython
+```
 <br/>
+
 **3. Extra nice to have**<br/>
 <br/>
-sudo apt-get install codeblocks codeblocks-contrib<br/>
-sudo apt-get install spyder3<br/>
+ ```bash
+$sudo apt-get install codeblocks codeblocks-contrib
+$sudo apt-get install spyder3
+```
 <br/>
 **4. Swapfile Armbian** ( if you want to compile faster, with make -j4)<br/>
  https://linuxize.com/post/how-to-add-swap-space-on-debian-9/<br/>
  <br/>
-sudo swapon --show<br/>
-sudo fallocate -l 2G /swapfile<br/>
-sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048576<br/>
-sudo chmod 600 /swapfile<br/>
-sudo mkswap /swapfile<br/>
-sudo swapon /swapfile<br/>
-
+ ```bash
+$sudo swapon --show
+$sudo fallocate -l 2G /swapfile
+$sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048576
+$sudo chmod 600 /swapfile
+$sudo mkswap /swapfile
+$sudo swapon /swapfile
+```
  *If you whant to make it permanent ..*<br/>
-sudo nano /etc/fstab<br/>
-
+  ```bash
+$sudo nano /etc/fstab<br/>
+```
  *add*<br/>
 /swapfile swap swap defaults 0 0<br/>
 <br/>
