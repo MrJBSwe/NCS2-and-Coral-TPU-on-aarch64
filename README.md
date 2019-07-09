@@ -29,7 +29,7 @@ $sudo apt-get install cython cython3 libv4l-dev
 <br/>
 
 **2. pip/python**<br/>
- ```bash
+```bash
 $wget https://bootstrap.pypa.io/get-pip.py
 $sudo python3 get-pip.py
 $sudo -H  pip  install numpy
@@ -44,7 +44,7 @@ $sudo apt-get install codeblocks codeblocks-contrib
 $sudo apt-get install spyder3
 ```
 <br/>
-**4. Swapfile Armbian** ( if you want to compile faster, with make -j4)<br/>
+**4. Swapfile Armbian**( if you want to compile faster, with make -j4)<br/>
  https://linuxize.com/post/how-to-add-swap-space-on-debian-9/<br/>
  <br/>
  
@@ -56,15 +56,16 @@ $sudo chmod 600 /swapfile
 $sudo mkswap /swapfile
 $sudo swapon /swapfile
 ```
+<br/>
  *If you whant to make it permanent ..*<br/>
   ```bash
 $sudo nano /etc/fstab<br/>
 ```
 <br/>
  *add*<br/>
- ```bash
+```bash
 /swapfile swap swap defaults 0 0<br/>
-  ```bash
+```bash
 <br/>
 
 **5. OpenCV, select your prefered version**<br/>
