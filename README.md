@@ -58,8 +58,9 @@ $sudo mkswap /swapfile
 $sudo swapon /swapfile
 ```
 <br/>
+
 ```bash
-$sudo nano /etc/fstab<br/>
+$sudo nano /etc/fstab
 /swapfile swap swap defaults 0 0 # Add this to make it permanent
 ```
 <br/>
@@ -68,7 +69,7 @@ $sudo nano /etc/fstab<br/>
 This step is optional ( intended primary for a clean Armbian )<br/>
 <br/>
 ```bash
-$cd ~<br/>
+$cd ~
 $wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.0.1.zip
 $wget -O opencv.zip https://github.com/opencv/opencv/archive/4.0.1.zip
 $unzip opencv_contrib.zip 
