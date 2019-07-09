@@ -145,7 +145,7 @@ l_openvino_toolkit_raspbi_p_2019.1.094.tgz<br/>
 <br/>
 to<br/>
 ```bash
-$~/ncs2/dldt/inference-engine/samples/<br/>
+$~/ncs2/dldt/inference-engine/samples/
 ```
 <br/>
 
@@ -179,14 +179,17 @@ set(CMAKE_CXX_COMPILER g++-7)<br/>
 **7.2 Build inference-engine for C++ & python**<br/>
 <br/>
 *from step 5, depends on your version of OpenCV*<br/>
+
 ```bash
 $export OpenCV_DIR=/usr/include/opencv2       # Nvidia Jetson nano 
 ```
+
 or<br/>
 ```bash
 $export OpenCV_DIR=/usr/local/include/opencv4 # Install from source  
 ```
  <br/>
+ 
 <br/>
 *verify -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so*<br/>
  *verify DPYTHON_INCLUDE_DIR=/usr/include/python3.6*<br/>   
@@ -204,30 +207,39 @@ $make -j4<br/>
 **7.3 create tools folder**<br/>
 patch output folder with tool from x86 installation<br/>
 <br/>
-~/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/inference_engine/**tools**<br/>
+```bash
+~/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/inference_engine/tools
+```
+
 <br/>
-*copy from your x86 openvino tools folder to tools*  <br/>
-tools/accuracy_checker<br/>
-tools/benchmark<br/>
-tools/calibration<br/>
-tools/utils<br/>
-tools/network.py<br/>
+*copy from your x86 openvino tools folder to tools* 
+```bash
+tools/accuracy_checker
+tools/benchmark
+tools/calibration
+tools/utils
+tools/network.py
+```
 <br/>
+
 **7.4 Simple stupid python installation**<br/>
 <br/>
-cd /usr/local/lib/python3.6/dist-packages<br/>
-sudo mkdir  openvino<br/>
-cd openvino<br/>
-sudo cp -r ~/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/* .<br/>
+```bash
+$cd /usr/local/lib/python3.6/dist-packages 
+$sudo mkdir  openvino 
+$cd openvino 
+$sudo cp -r ~/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/* . 
+```
 <br/>
 
  **8 Needed myriad-rules ?** ( seems to work without it )<br/>
 *from l_openvino_toolkit_raspbi_p_2019.1.094.tgz*<br/>
-
-cp 97-myriad-usbboot.rules_.txt /etc/udev/rules.d/97-myriad-usbboot.rules<br/>
-udevadm control --reload-rules<br/>
-udevadm trigger<br/>
-ldconfig<br/>
+```bash
+cp 97-myriad-usbboot.rules_.txt /etc/udev/rules.d/97-myriad-usbboot.rules
+udevadm control --reload-rules
+udevadm trigger
+ldconfig 
+```
 <br/>
 
 **Ready !**<br/>
