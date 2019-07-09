@@ -10,12 +10,12 @@ This is tested with :
  Step 7-8 is aimed at NCS2, and builds all C++ dldt inference-engine libraries and ie_api.so for python<br />
 
  **1. apt-get**<br/>
- <br/>
- ```bash
+ 
+```bash
 $sudo apt-get update && sudo apt-get upgrade
 $sudo apt-get install build-essential cmake unzip pkg-config
 $sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev
-$sudo apt-get install libxvidcore-dev libx264-dev  
+$sudo apt-get install libxvidcore-dev libx264-dev 
 $sudo apt-get install libgtk-3-dev libopenblas-dev libpng-dev
 $sudo apt-get install libatlas-base-dev gfortran libdc1394-22-dev
 $sudo apt-get install python3-dev python3-numpy python3-pip
@@ -26,6 +26,7 @@ $sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base libusb-1.0-0-d
 $sudo apt-get install ffmpeg libjpeg-dev libtiff-dev  git  libtbb2 libtbb-dev
 $sudo apt-get install cython cython3 libv4l-dev
 ```
+
 <br/>
 
 **2. pip/python**<br/>
@@ -38,8 +39,7 @@ $sudo -H  pip3 install Cython
 <br/>
 
 **3. Extra nice to have**<br/>
-<br/>
- ```bash
+```bash
 $sudo apt-get install codeblocks codeblocks-contrib
 $sudo apt-get install spyder3
 ```
@@ -47,8 +47,7 @@ $sudo apt-get install spyder3
 
 **4. Swapfile Armbian** if you want to compile faster, with make -j4 <br/>
  https://linuxize.com/post/how-to-add-swap-space-on-debian-9/<br/>
- <br/>
- ```bash
+```bash
 $sudo swapon --show
 $sudo fallocate -l 2G /swapfile
 $sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048576
@@ -59,11 +58,8 @@ $# Add this to make it permanent
 $sudo nano /etc/fstab
 /swapfile swap swap defaults 0 0 
 ```
-<br/>
-
 **5. OpenCV, select your prefered version**<br/>
 This step is optional ( intended primary for a clean Armbian )<br/>
-<br/>
 ```bash
 $cd ~
 $wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.0.1.zip
@@ -84,7 +80,6 @@ $sudo make install
  
 **6. Coral**<br/>
  https://coral.withgoogle.com/docs/accelerator/get-started/<br/>
-<br/>
 ```bash
 $cd ~ 
 $mkdir coral 
@@ -95,7 +90,6 @@ $cd edgetpu_api
 $bash ./install.sh 
 ```
 <br/>
-
 *Minor simple stupid fix for Coral*<br/>
 ```bash
 $cd /usr/local/lib/python3.6/dist-packages/edgetpu/swig/
@@ -118,7 +112,6 @@ $git submodule update --recursive
 <br/>
 
 **7.1 Prepare dldt for aarch64 or architecture of your choice**<br/>
-<br/>
  *Check your machine hardware architecture with : ```uname --m```  in my case aarch64*  <br/>
  - Add more samples than comes with dldt
  - Fix #define in samples !defined(__aarch64__)
@@ -133,7 +126,6 @@ $git submodule update --recursive
 <br/>
 from<br/>
 l_openvino_toolkit_raspbi_p_2019.1.094.tgz<br/>
-<br/>
 to<br/>
 ```bash
 $~/ncs2/dldt/inference-engine/samples/
