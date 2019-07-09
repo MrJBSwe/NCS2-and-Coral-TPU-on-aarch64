@@ -11,19 +11,21 @@ This is tested with :
 
  **1. apt-get**<br/>
  <br/>
-sudo apt-get update && sudo apt-get upgrade<br />
-sudo apt-get install build-essential cmake unzip pkg-config<br/>
-sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev<br/>
-sudo apt-get install libxvidcore-dev libx264-dev  <br/>
-sudo apt-get install libgtk-3-dev libopenblas-dev libpng-dev<br/>
-sudo apt-get install libatlas-base-dev gfortran libdc1394-22-dev<br/>
-sudo apt-get install python3-dev python3-numpy python3-pip<br/>
-sudo apt-get install curl wget libssl-dev ca-certificates git libboost-regex-dev<br/>
-sudo apt-get install libgtk2.0-dev pkg-config unzip automake libtool autoconf<br/>
-sudo apt-get install libcairo2-dev libpango1.0-dev libglib2.0-dev libgtk2.0-dev<br/>
-sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base libusb-1.0-0-dev<br/>
-sudo apt-get install ffmpeg libjpeg-dev libtiff-dev  git  libtbb2 libtbb-dev<br/>
-sudo apt-get install cython cython3 libv4l-dev<br/>
+ ```bash
+$sudo apt-get update && sudo apt-get upgrade<br />
+$sudo apt-get install build-essential cmake unzip pkg-config<br/>
+$sudo apt-get install libavcodec-dev libavformat-dev libswscale-dev<br/>
+$sudo apt-get install libxvidcore-dev libx264-dev  <br/>
+$sudo apt-get install libgtk-3-dev libopenblas-dev libpng-dev<br/>
+$sudo apt-get install libatlas-base-dev gfortran libdc1394-22-dev<br/>
+$sudo apt-get install python3-dev python3-numpy python3-pip<br/>
+$sudo apt-get install curl wget libssl-dev ca-certificates git libboost-regex-dev<br/>
+$sudo apt-get install libgtk2.0-dev pkg-config unzip automake libtool autoconf<br/>
+$sudo apt-get install libcairo2-dev libpango1.0-dev libglib2.0-dev libgtk2.0-dev<br/>
+$sudo apt-get install libgstreamer1.0-0 gstreamer1.0-plugins-base libusb-1.0-0-dev<br/>
+$sudo apt-get install ffmpeg libjpeg-dev libtiff-dev  git  libtbb2 libtbb-dev<br/>
+$sudo apt-get install cython cython3 libv4l-dev<br/>
+```
 <br/>
 **2. pip/python**<br/>
 wget https://bootstrap.pypa.io/get-pip.py<br/>
