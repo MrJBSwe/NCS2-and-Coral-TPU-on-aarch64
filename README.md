@@ -152,9 +152,9 @@ $~/ncs2/dldt/inference-engine/samples/
 
 **7.1.2 Fix defines in samples**<br/>
 *Ex, with codeblocks Ctrl+Shift+F  ( find in files )*<br/>
-find  "!defined(_M_ARM)" then add **&& !defined(__aarch64__)**<br/>
+find  ```"!defined(_M_ARM)" then add **&& !defined(__aarch64__)**```
 <br/>
-example : #if !defined(__arm__) && !defined(_M_ARM) && !defined(__aarch64__)<br/>
+example : ```#if !defined(__arm__) && !defined(_M_ARM) && !defined(__aarch64__)```
 <br/>
 
 **7.1.3 Add aarch64 build folder** ( optional )<br/>
@@ -205,7 +205,7 @@ $mkdir build
 $cd build
 $ #Todo add more flags of your choice... 
 $cmake -DENABLE_PYTHON=ON -DPYTHON_EXECUTABLE=\`which python3.6\` -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.6 -DCMAKE_BUILD_TYPE=Release -DENABLE_MKL_DNN=OFF -DENABLE_CLDNN=OFF -DENABLE_GNA=OFF -DENABLE_SSE42=OFF -DTHREADING=SEQ ..
-$make -j4<br/>
+$make -j4
 ```
 <br/>
 
@@ -240,11 +240,11 @@ $sudo cp -r ~/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/pyth
 ```
 <br/>
 
- **8 Needed myriad-rules ?** ( seems to work without it )<br/>
+ **8.0 Myriad-rules ?** ( seems to work without it )<br/>
 *from l_openvino_toolkit_raspbi_p_2019.1.094.tgz*<br/>
 
 ```bash
-$cp 97-myriad-usbboot.rules_.txt /etc/udev/rules.d/97-myriad-usbboot.rules
+$sudo cp 97-myriad-usbboot.rules_.txt /etc/udev/rules.d/97-myriad-usbboot.rules
 $udevadm control --reload-rules
 $udevadm trigger
 $ldconfig 
