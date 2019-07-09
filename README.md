@@ -46,7 +46,6 @@ $sudo apt-get install spyder3
 <br/>
 
 **4. Swapfile Armbian** if you want to compile faster, with make -j4 <br/>
-<br/>
  https://linuxize.com/post/how-to-add-swap-space-on-debian-9/<br/>
  <br/>
  ```bash
@@ -185,8 +184,9 @@ or<br/>
 ```bash
 $export OpenCV_DIR=/usr/local/include/opencv4 # Install from source  
 ```
- <br/>
-verify location ( and adjust )<br/>
+<br/>
+verify location ( adjust if needed)<br/>
+
 ``` 
 -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so  
 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6   
