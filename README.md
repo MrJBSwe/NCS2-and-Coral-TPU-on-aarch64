@@ -182,7 +182,7 @@ or<br/>
 $export OpenCV_DIR=/usr/local/include/opencv4 # Install from source  
 ```
 <br/>
-verify location ( adjust if needed)<br/>
+verify location for cmake( adjust if needed)<br/>
 
 ``` 
 -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so  
