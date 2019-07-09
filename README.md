@@ -79,13 +79,7 @@ $mv opencv_contrib-4.0.1 opencv_contrib
 $cd opencv
 $mkdir build
 $cd build
-```
-<br/>
-
-*Todo add more flags of your choice....and note opencv directory*<br/>
-<br/>
-
-```bash
+$#Todo add more flags of your choice....and note opencv directory
 $cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_ENABLE_NONFREE=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D BUILD_EXAMPLES=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -DWITH_INF_ENGINE=ON -DENABLE_CXX11=ON  ..
 $make -j4
 $sudo make install
@@ -152,7 +146,7 @@ $~/ncs2/dldt/inference-engine/samples/
 
 **7.1.2 Fix defines in samples**<br/>
 *Ex, with codeblocks Ctrl+Shift+F  ( find in files )*<br/>
-find  ```"!defined(_M_ARM)"``` then add ```&& !defined(__aarch64__)```
+find  ```!defined(_M_ARM)``` then add ```&& !defined(__aarch64__)```
 <br/>
 example : ```#if !defined(__arm__) && !defined(_M_ARM) && !defined(__aarch64__)```
 <br/>
@@ -187,13 +181,11 @@ set(CMAKE_CXX_COMPILER g++-7)
 ```bash
 $export OpenCV_DIR=/usr/include/opencv2       # Nvidia Jetson nano 
 ```
-
 or<br/>
 ```bash
 $export OpenCV_DIR=/usr/local/include/opencv4 # Install from source  
 ```
  <br/>
- 
 verify location ( and adjust )<br/>
 ``` 
 -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so  
