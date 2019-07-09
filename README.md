@@ -144,7 +144,9 @@ from<br/>
 l_openvino_toolkit_raspbi_p_2019.1.094.tgz<br/>
 <br/>
 to<br/>
-~/ncs2/dldt/inference-engine/samples/<br/>
+```bash
+$~/ncs2/dldt/inference-engine/samples/<br/>
+```
 <br/>
 
 **7.1.2 Fix defines in samples**<br/>
@@ -177,22 +179,28 @@ set(CMAKE_CXX_COMPILER g++-7)<br/>
 **7.2 Build inference-engine for C++ & python**<br/>
 <br/>
 *from step 5, depends on your version of OpenCV*<br/>
-export OpenCV_DIR=/usr/include/opencv2  ( Nvidia Jetson nano ) <br/>
+```bash
+$export OpenCV_DIR=/usr/include/opencv2       # Nvidia Jetson nano 
+```
 or<br/>
-export OpenCV_DIR=/usr/local/include/opencv4 ( Install from source )<br/>
+```bash
+$export OpenCV_DIR=/usr/local/include/opencv4 # Install from source  
+```
  <br/>
 <br/>
 *verify -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so*<br/>
  *verify DPYTHON_INCLUDE_DIR=/usr/include/python3.6*<br/>   
 <br/>
-
-cd ~/ncs2/dldt/inference-engine<br/>
-mkdir build<br/>
-cd build<br/>
-*Todo add more flags of your choice...*<br/>
-cmake -DENABLE_PYTHON=ON -DPYTHON_EXECUTABLE=\`which python3.6\` -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.6 -DCMAKE_BUILD_TYPE=Release -DENABLE_MKL_DNN=OFF -DENABLE_CLDNN=OFF -DENABLE_GNA=OFF -DENABLE_SSE42=OFF -DTHREADING=SEQ ..<br/>
-make -j4<br/>
+```bash
+$cd ~/ncs2/dldt/inference-engine<br/>
+$mkdir build<br/>
+$cd build<br/>
+$ #Todo add more flags of your choice... 
+$cmake -DENABLE_PYTHON=ON -DPYTHON_EXECUTABLE=\`which python3.6\` -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.6 -DCMAKE_BUILD_TYPE=Release -DENABLE_MKL_DNN=OFF -DENABLE_CLDNN=OFF -DENABLE_GNA=OFF -DENABLE_SSE42=OFF -DTHREADING=SEQ ..<br/>
+$make -j4<br/>
+```
 <br/>
+
 **7.3 create tools folder**<br/>
 patch output folder with tool from x86 installation<br/>
 <br/>
