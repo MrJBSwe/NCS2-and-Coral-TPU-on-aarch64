@@ -82,12 +82,15 @@ $cd build
 ```
 <br/>
 
-*Todo add more flags of your choice....*<br/>
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_ENABLE_NONFREE=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D BUILD_EXAMPLES=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -DWITH_INF_ENGINE=ON -DENABLE_CXX11=ON  ..<br/>
-make -j4<br/>
-sudo make install<br/>
- *Note the installation directory of opencv*<br/>
+*Todo add more flags of your choice....and note opencv directory*<br/>
 <br/>
+```bash
+$cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_ENABLE_NONFREE=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D BUILD_EXAMPLES=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -DWITH_INF_ENGINE=ON -DENABLE_CXX11=ON  ..
+$make -j4
+$sudo make install<br/>
+```bash
+<br/>
+ 
 **6. Coral**<br/>
  https://coral.withgoogle.com/docs/accelerator/get-started/<br/>
 <br/>
