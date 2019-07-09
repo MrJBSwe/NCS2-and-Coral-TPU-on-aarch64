@@ -129,7 +129,7 @@ $git submodule update --recursive
 
 **7.1 Prepare dldt for aarch64 or architecture of your choice**<br/>
 <br/>
- *Check your machine hardware architecture with : **uname --m**  in my case aarch64*  <br/>
+ *Check your machine hardware architecture with : ```uname --m```  in my case aarch64*  <br/>
  - Add more samples than comes with dldt
  - Fix #define in samples !defined(__aarch64__)
  - Add aarch64 build folder ( optional )
@@ -152,7 +152,7 @@ $~/ncs2/dldt/inference-engine/samples/
 
 **7.1.2 Fix defines in samples**<br/>
 *Ex, with codeblocks Ctrl+Shift+F  ( find in files )*<br/>
-find  ```"!defined(_M_ARM)" then add **&& !defined(__aarch64__)**```
+find  ```"!defined(_M_ARM)"``` then add ```&& !defined(__aarch64__)```
 <br/>
 example : ```#if !defined(__arm__) && !defined(_M_ARM) && !defined(__aarch64__)```
 <br/>
@@ -194,8 +194,7 @@ $export OpenCV_DIR=/usr/local/include/opencv4 # Install from source
 ```
  <br/>
  
-<br/>
-*verify location ( and adjust ) *
+verify location ( and adjust )<br/>
 ``` 
 -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so  
 -DPYTHON_INCLUDE_DIR=/usr/include/python3.6   
@@ -221,7 +220,7 @@ patch output folder with tool from x86 installation<br/>
 ```
 
 <br/>
-*copy from your x86 openvino tools folder to tools* <br/>
+copy from your x86 openvino tools folder to tools<br/>
 
 ```bash
 tools/accuracy_checker
