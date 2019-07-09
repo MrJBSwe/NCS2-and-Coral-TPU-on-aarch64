@@ -84,6 +84,7 @@ $cd build
 
 *Todo add more flags of your choice....and note opencv directory*<br/>
 <br/>
+
 ```bash
 $cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_ENABLE_NONFREE=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D BUILD_EXAMPLES=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -DWITH_INF_ENGINE=ON -DENABLE_CXX11=ON  ..
 $make -j4
@@ -192,8 +193,9 @@ $export OpenCV_DIR=/usr/local/include/opencv4 # Install from source
  
 <br/>
 *verify -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so*<br/>
- *verify DPYTHON_INCLUDE_DIR=/usr/include/python3.6*<br/>   
+*verify -DPYTHON_INCLUDE_DIR=/usr/include/python3.6*<br/>   
 <br/>
+
 ```bash
 $cd ~/ncs2/dldt/inference-engine<br/>
 $mkdir build<br/>
@@ -207,12 +209,14 @@ $make -j4<br/>
 **7.3 create tools folder**<br/>
 patch output folder with tool from x86 installation<br/>
 <br/>
+
 ```bash
 ~/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/inference_engine/tools
 ```
 
 <br/>
-*copy from your x86 openvino tools folder to tools* 
+*copy from your x86 openvino tools folder to tools* <br/>
+
 ```bash
 tools/accuracy_checker
 tools/benchmark
@@ -224,6 +228,7 @@ tools/network.py
 
 **7.4 Simple stupid python installation**<br/>
 <br/>
+
 ```bash
 $cd /usr/local/lib/python3.6/dist-packages 
 $sudo mkdir  openvino 
@@ -234,11 +239,12 @@ $sudo cp -r ~/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/pyth
 
  **8 Needed myriad-rules ?** ( seems to work without it )<br/>
 *from l_openvino_toolkit_raspbi_p_2019.1.094.tgz*<br/>
+
 ```bash
-cp 97-myriad-usbboot.rules_.txt /etc/udev/rules.d/97-myriad-usbboot.rules
-udevadm control --reload-rules
-udevadm trigger
-ldconfig 
+$cp 97-myriad-usbboot.rules_.txt /etc/udev/rules.d/97-myriad-usbboot.rules
+$udevadm control --reload-rules
+$udevadm trigger
+$ldconfig 
 ```
 <br/>
 
