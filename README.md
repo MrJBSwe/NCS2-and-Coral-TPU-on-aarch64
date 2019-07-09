@@ -195,8 +195,11 @@ $export OpenCV_DIR=/usr/local/include/opencv4 # Install from source
  <br/>
  
 <br/>
-*verify -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so*<br/>
-*verify -DPYTHON_INCLUDE_DIR=/usr/include/python3.6*<br/>   
+*verify location ( and adjust ) *
+``` 
+-DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so  
+-DPYTHON_INCLUDE_DIR=/usr/include/python3.6   
+ ```
 <br/>
 
 ```bash
@@ -204,7 +207,7 @@ $cd ~/ncs2/dldt/inference-engine
 $mkdir build
 $cd build
 $ #Todo add more flags of your choice... 
-$cmake -DENABLE_PYTHON=ON -DPYTHON_EXECUTABLE=\`which python3.6\` -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.6 -DCMAKE_BUILD_TYPE=Release -DENABLE_MKL_DNN=OFF -DENABLE_CLDNN=OFF -DENABLE_GNA=OFF -DENABLE_SSE42=OFF -DTHREADING=SEQ ..
+$cmake -DENABLE_PYTHON=ON -DPYTHON_EXECUTABLE=`which python3.6` -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.6 -DCMAKE_BUILD_TYPE=Release -DENABLE_MKL_DNN=OFF -DENABLE_CLDNN=OFF -DENABLE_GNA=OFF -DENABLE_SSE42=OFF -DTHREADING=SEQ ..
 $make -j4
 ```
 <br/>
