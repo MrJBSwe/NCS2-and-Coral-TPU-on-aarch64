@@ -55,12 +55,9 @@ $sudo dd if=/dev/zero of=/swapfile bs=1024 count=2048576
 $sudo chmod 600 /swapfile
 $sudo mkswap /swapfile
 $sudo swapon /swapfile
-```
-<br/>
-
-```bash
+$# Add this to make it permanent
 $sudo nano /etc/fstab
-/swapfile swap swap defaults 0 0 # Add this to make it permanent
+/swapfile swap swap defaults 0 0 
 ```
 <br/>
 
@@ -164,7 +161,7 @@ elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")
 
 **7.1.4 Select compiler** ( optional )<br/>
 <br/>
-Find and update "CMAKE_C_COMPILER"<br/>
+Find and update ```CMAKE_C_COMPILER```<br/>
 ```
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR aarch64)
