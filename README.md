@@ -90,7 +90,7 @@ $cd edgetpu_api
 $bash ./install.sh 
 ```
 <br/>
-*Minor simple stupid fix for Coral*<br/>
+Minor simple stupid fix for Coral<br/>
 
 ```bash
 $cd /usr/local/lib/python3.6/dist-packages/edgetpu/swig/
