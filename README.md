@@ -44,11 +44,11 @@ $sudo apt-get install codeblocks codeblocks-contrib
 $sudo apt-get install spyder3
 ```
 <br/>
-**4. Swapfile Armbian**( if you want to compile faster, with make -j4)<br/>
+
+**4. Swapfile Armbian** if you want to compile faster, with make -j4 <br/>
 <br/>
  https://linuxize.com/post/how-to-add-swap-space-on-debian-9/<br/>
  <br/>
- 
  ```bash
 $sudo swapon --show
 $sudo fallocate -l 2G /swapfile
@@ -58,31 +58,28 @@ $sudo mkswap /swapfile
 $sudo swapon /swapfile
 ```
 <br/>
- *If you whant to make it permanent ..*<br/>
 ```bash
 $sudo nano /etc/fstab<br/>
+/swapfile swap swap defaults 0 0 # Add this to make it permanent
 ```
-<br/>
-*add*<br/>
-```bash
-/swapfile swap swap defaults 0 0
-```bash
 <br/>
 
 **5. OpenCV, select your prefered version**<br/>
 This step is optional ( intended primary for a clean Armbian )<br/>
-
-cd ~<br/>
-wget -O opencv_contrib.zip<br/>
-https://github.com/opencv/opencv_contrib/archive/4.0.1.zip<br/>
-wget -O opencv.zip https://github.com/opencv/opencv/archive/4.0.1.zip<br/>
-unzip opencv_contrib.zip<br/>
-unzip opencv.zip<br/>
-mv opencv-4.0.1 opencv<br/>
-mv opencv_contrib-4.0.1 opencv_contrib<br/>
-cd opencv<br/>
-mkdir build<br/>
-cd build<br/>
+<br/>
+```bash
+$cd ~<br/>
+$wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/4.0.1.zip
+$wget -O opencv.zip https://github.com/opencv/opencv/archive/4.0.1.zip
+$unzip opencv_contrib.zip 
+$unzip opencv.zip
+$mv opencv-4.0.1 opencv
+$mv opencv_contrib-4.0.1 opencv_contrib
+$cd opencv
+$mkdir build
+$cd build
+```
+<br/>
 
 *Todo add more flags of your choice....*<br/>
 cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_ENABLE_NONFREE=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D BUILD_EXAMPLES=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -DWITH_INF_ENGINE=ON -DENABLE_CXX11=ON  ..<br/>
