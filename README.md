@@ -159,22 +159,25 @@ example : #if !defined(__arm__) && !defined(_M_ARM) && !defined(__aarch64__)<br/
 
 **7.1.3 Add aarch64 build folder** ( optional )<br/>
 <br/>
-find "armv7l" and add elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")<br/>
-<br/>
-*example*<br/>
-if(CMAKE_SYSTEM_PROCESSOR STREQUAL "armv7l")<br/>
-    set (ARCH_FOLDER armv7l)<br/>
-elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64")<br/>
-    set (ARCH_FOLDER aarch64)<br/>
-<br/>
+```
+find "armv7l" and add elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64") 
+
+# example 
+if(CMAKE_SYSTEM_PROCESSOR STREQUAL "armv7l") 
+    set (ARCH_FOLDER armv7l) 
+elseif(CMAKE_SYSTEM_PROCESSOR STREQUAL "aarch64") 
+    set (ARCH_FOLDER aarch64) 
+```
 
 **7.1.4 Select compiler** ( optional )<br/>
 <br/>
 Find and update "CMAKE_C_COMPILER"<br/>
-set(CMAKE_SYSTEM_NAME Linux)<br/>
-set(CMAKE_SYSTEM_PROCESSOR aarch64)<br/>
-set(CMAKE_C_COMPILER gcc-7)<br/>
-set(CMAKE_CXX_COMPILER g++-7)<br/>
+```
+set(CMAKE_SYSTEM_NAME Linux)
+set(CMAKE_SYSTEM_PROCESSOR aarch64)
+set(CMAKE_C_COMPILER gcc-7)
+set(CMAKE_CXX_COMPILER g++-7) 
+```
 <br/>
 
 **7.2 Build inference-engine for C++ & python**<br/>
@@ -197,11 +200,11 @@ $export OpenCV_DIR=/usr/local/include/opencv4 # Install from source
 <br/>
 
 ```bash
-$cd ~/ncs2/dldt/inference-engine<br/>
-$mkdir build<br/>
-$cd build<br/>
+$cd ~/ncs2/dldt/inference-engine
+$mkdir build
+$cd build
 $ #Todo add more flags of your choice... 
-$cmake -DENABLE_PYTHON=ON -DPYTHON_EXECUTABLE=\`which python3.6\` -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.6 -DCMAKE_BUILD_TYPE=Release -DENABLE_MKL_DNN=OFF -DENABLE_CLDNN=OFF -DENABLE_GNA=OFF -DENABLE_SSE42=OFF -DTHREADING=SEQ ..<br/>
+$cmake -DENABLE_PYTHON=ON -DPYTHON_EXECUTABLE=\`which python3.6\` -DPYTHON_LIBRARY=/usr/lib/aarch64-linux-gnu/libpython3.6m.so -DPYTHON_INCLUDE_DIR=/usr/include/python3.6 -DCMAKE_BUILD_TYPE=Release -DENABLE_MKL_DNN=OFF -DENABLE_CLDNN=OFF -DENABLE_GNA=OFF -DENABLE_SSE42=OFF -DTHREADING=SEQ ..
 $make -j4<br/>
 ```
 <br/>
@@ -210,7 +213,7 @@ $make -j4<br/>
 patch output folder with tool from x86 installation<br/>
 <br/>
 
-```bash
+```
 ~/ncs2/dldt/inference-engine/bin/aarch64/Release/lib/python_api/python3.6/openvino/inference_engine/tools
 ```
 
