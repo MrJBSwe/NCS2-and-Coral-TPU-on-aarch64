@@ -87,38 +87,43 @@ $cd build
 ```bash
 $cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D INSTALL_PYTHON_EXAMPLES=ON -D INSTALL_C_EXAMPLES=OFF -D OPENCV_ENABLE_NONFREE=ON -D OPENCV_EXTRA_MODULES_PATH=~/opencv_contrib/modules -D BUILD_EXAMPLES=ON -D ENABLE_PRECOMPILED_HEADERS=OFF -DWITH_INF_ENGINE=ON -DENABLE_CXX11=ON  ..
 $make -j4
-$sudo make install<br/>
-```bash
+$sudo make install
+```
 <br/>
  
 **6. Coral**<br/>
  https://coral.withgoogle.com/docs/accelerator/get-started/<br/>
 <br/>
-cd ~<br/>
-mkdir coral<br/>
-cd coral<br/>
-wget https://dl.google.com/coral/edgetpu_api/edgetpu_api_latest.tar.gz -O<br/>
-edgetpu_api.tar.gz --trust-server-names<br/>
-tar xzf edgetpu_api.tar.gz<br/>
-cd edgetpu_api<br/>
-bash ./install.sh<br/>
+```bash
+$cd ~ 
+$mkdir coral 
+$cd coral 
+$wget https://dl.google.com/coral/edgetpu_api/edgetpu_api_latest.tar.gz -O edgetpu_api.tar.gz --trust-server-names 
+$tar xzf edgetpu_api.tar.gz 
+$cd edgetpu_api 
+$bash ./install.sh 
+```
+<br/>
 
 *Minor simple stupid fix for Coral*<br/>
-cd /usr/local/lib/python3.6/dist-packages/edgetpu/swig/<br/>
-sudo cp _edgetpu_cpp_wrapper.cpython-35m-aarch64-linux-gnu.so edgetpu_cpp_wrapper.so<br/>
+```bash
+$cd /usr/local/lib/python3.6/dist-packages/edgetpu/swig/
+$sudo cp _edgetpu_cpp_wrapper.cpython-35m-aarch64-linux-gnu.so edgetpu_cpp_wrapper.so
+```
 <br/>
 
 **7. NCS 2**<br/>
 https://software.intel.com/en-us/articles/ARM64-sbc-and-NCS2<br/>
 https://github.com/skhameneh/OpenVINO-ARM64<br/>
-
-cd ~<br/>
-mkdir ncs2<br/>
-cd ncs2<br/>
-git clone https://github.com/opencv/dldt.git<br/>
-cd dldt/inference-engine/<br/>
-git submodule init<br/>
-git submodule update --recursive<br/>
+```bash
+$cd ~
+$mkdir ncs2
+$cd ncs2
+$git clone https://github.com/opencv/dldt.git
+$cd dldt/inference-engine/
+$git submodule init
+$git submodule update --recursive
+```
 <br/>
 
 **7.1 Prepare dldt for aarch64 or architecture of your choice**<br/>
